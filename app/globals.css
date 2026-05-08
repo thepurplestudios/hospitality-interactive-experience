@@ -1,8 +1,9 @@
+@import url("https://fonts.googleapis.com/css2?family=Italianno&family=Italiana&display=swap");
 @import "tailwindcss";
 
 :root {
   /* COLORS */
-  --background: #f6f1e8;
+  --background: #f1ebd8;
   --foreground: #181411;
 
   --primary: #6f4e37;
@@ -11,11 +12,6 @@
 
   --muted: #ede5da;
   --border: #d8ccbc;
-
-  /* TYPOGRAPHY */
-  --font-brand: var(--font-brand);
-  --font-heading: var(--font-heading);
-  --font-body: var(--font-body);
 
   /* SPACING */
   --container: 1400px;
@@ -40,7 +36,7 @@
   --color-muted: var(--muted);
   --color-border: var(--border);
 
-  --font-sans: var(--font-body);
+  --font-sans: var(--font-body), sans-serif;
 }
 
 * {
@@ -74,9 +70,20 @@ button {
 
 /* TYPOGRAPHY SYSTEM */
 .brand-font {
-  font-family: var(--font-brand);
+  font-family: var(--font-brand), cursive !important;
 }
 
 .heading-font {
-  font-family: var(--font-heading);
+  font-family: var(--font-heading), serif !important;
+}
+
+/* GLASS */
+.glass {
+  background: rgba(255, 255, 255, 0.38);
+  backdrop-filter: blur(28px);
+  -webkit-backdrop-filter: blur(28px);
+  border: 1px solid rgba(255, 255, 255, 0.55);
+  box-shadow:
+    0 10px 30px rgba(0, 0, 0, 0.08),
+    inset 0 1px 1px rgba(255, 255, 255, 0.45);
 }

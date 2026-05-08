@@ -21,8 +21,7 @@ const italiana = Italiana({
 
 export const metadata: Metadata = {
   title: "Hospitality Interactive Experience",
-  description:
-    "Premium hospitality digital experience built with Next.js and modern frontend motion.",
+  description: "Premium hospitality digital experience",
 };
 
 export default function RootLayout({
@@ -33,9 +32,9 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${geist.variable} ${italianno.variable} ${italiana.variable} h-full antialiased`}
+      className={`${geist.variable} ${italianno.variable} ${italiana.variable}`}
     >
-      <body className="min-h-full bg-background text-foreground font-sans">
+      <body className="bg-background text-foreground font-sans">
         {children}
       </body>
     </html>
