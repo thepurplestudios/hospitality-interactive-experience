@@ -1,6 +1,8 @@
 "use client";
 
 import Navbar from "@/components/layout/Navbar";
+import Hero from "@/components/sections/Hero";
+import WhySection from "@/components/sections/WhySection";
 import ReservationModal from "@/components/interactive/ReservationModal";
 import PageBlurOverlay from "@/components/motion/PageBlurOverlay";
 import { useUIStore } from "@/store/use-ui-store";
@@ -17,13 +19,8 @@ function HomeContent() {
           isReservationOpen ? "scale-[0.985]" : "scale-100"
         }`}
       >
-        <section
-          className="min-h-screen"
-          style={{
-            background:
-              "linear-gradient(180deg, #f6f1e8 0%, #efe4d2 50%, #f6f1e8 100%)",
-          }}
-        />
+        <Hero />
+        <WhySection />
       </main>
 
       <PageBlurOverlay isOpen={isReservationOpen} onClose={closeReservation} />
