@@ -3,6 +3,7 @@
 import Navbar from "@/components/layout/Navbar";
 import Hero from "@/components/sections/Hero";
 import WhySection from "@/components/sections/WhySection";
+import BuildYourOwnPasta from "@/components/sections/BuildYourOwnPasta";
 import ReservationModal from "@/components/interactive/ReservationModal";
 import PageBlurOverlay from "@/components/motion/PageBlurOverlay";
 import { useUIStore } from "@/store/use-ui-store";
@@ -21,6 +22,7 @@ function HomeContent() {
       >
         <Hero />
         <WhySection />
+        <BuildYourOwnPasta />
       </main>
 
       <PageBlurOverlay isOpen={isReservationOpen} onClose={closeReservation} />

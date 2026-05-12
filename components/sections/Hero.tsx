@@ -16,13 +16,13 @@ export default function Hero() {
           width={1200}
           height={1200}
           priority
-          className="w-[620px] md:w-[980px] xl:w-[1180px]"
+          className="w-155 md:w-245w-[1180px]"
         />
       </div>
 
       {/* content */}
       <Container className="relative z-10 flex min-h-screen items-center">
-        <div className="max-w-[780px] pt-28 md:pt-32">
+        <div className="max-w-195 pt-28 md:pt-32">
           <motion.h1
             initial={{ opacity: 0, y: 28 }}
             animate={{ opacity: 1, y: 0 }}
@@ -38,7 +38,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 18 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.15 }}
-            className="mt-5 max-w-[720px] text-[1rem] leading-[1.45] text-[#2f3a1f] sm:text-[1.1rem] md:mt-6 md:text-[1.2rem]"
+            className="mt-5 max-w-180 text-[1rem] leading-[1.45] text-[#2f3a1f] sm:text-[1.1rem] md:mt-6 md:text-[1.2rem]"
           >
             At Pasta Via, we make fresh pasta every morning and let you take the
             lead. Choose your shape, pick your sauce, add your toppings — and
@@ -48,15 +48,31 @@ export default function Hero() {
           <motion.button
             initial={{ opacity: 0, y: 18 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.25 }}
             whileHover={{
-              scale: 1.04,
-              y: -2,
+              scale: 1.025,
+              y: -1,
             }}
             whileTap={{
-              scale: 0.97,
+              scale: 0.985,
             }}
-            className="mt-6 rounded-[200px] border border-white/30 bg-white/12 px-7 py-5 text-[1.1rem] font-bold text-[#2f3a1f] shadow-[-5px_-5px_10px_2px_rgba(0,0,0,0.2)] backdrop-blur-[10px] transition-all md:mt-7 md:px-8 md:text-[1.35rem]"
+            className="
+    mt-6
+    rounded-[200px]
+    border border-white/30
+    bg-white/12
+    px-7 py-5
+    text-[1.1rem]
+    font-bold
+    text-[#2f3a1f]
+    shadow-[-5px_-5px_10px_2px_rgba(0,0,0,0.2)]
+    backdrop-blur-[10px]
+    transition-all
+    duration-150
+    ease-out
+    md:mt-7
+    md:px-8
+    md:text-[1.35rem]
+  "
           >
             VIEW MENU
           </motion.button>

@@ -22,13 +22,13 @@ export default function WhySection() {
         className="
           pointer-events-none
           absolute
-          left-[-100px]
-          top-[-260px]
+          -left-25
+          -top-65
           z-0
-          rotate-[-6deg]
-          w-[420px]
-          md:w-[520px]
-          xl:w-[620px]
+          -rotate-6
+          w-105
+          md:w-130
+          xl:w-155
         "
       >
         <Image
@@ -50,7 +50,7 @@ export default function WhySection() {
 
       <Container className="relative z-20">
         {/* content block */}
-        <div className="mr-0 ml-auto max-w-[980px]">
+        <div className="mr-0 ml-auto max-w-245">
           {" "}
           {/* heading */}
           <motion.h2
@@ -92,7 +92,7 @@ export default function WhySection() {
                   scale: 1.03,
                   rotate: i === 1 ? 0 : i % 2 === 0 ? -2 : 2,
                 }}
-                className="relative shrink-0 w-[200px] md:w-[250px] xl:w-[285px]"
+                className="relative shrink-0 w-50 md:w-62.5 xl:w-71.25"
               >
                 <Image
                   src="/images/why-section/plate.png"
