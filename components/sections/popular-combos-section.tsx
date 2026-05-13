@@ -39,7 +39,7 @@ const combos = [
 
 export default function PopularCombosSection() {
   return (
-    <section className="relative min-h-[220vh]">
+    <section className="relative min-h-[116vh]">
       {/* BG STAGE (ONLY THIS IS STICKY) */}
       <div className="absolute inset-0 -z-10">
         <div
