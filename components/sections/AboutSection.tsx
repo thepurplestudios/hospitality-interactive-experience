@@ -30,31 +30,56 @@ export default function AboutSection() {
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
           className="
-            max-w-[720px]
-            rounded-[20px]
-            bg-[#e7dfcf]
-            px-10
-            py-10
-            text-center
-            shadow-[0_20px_60px_rgba(0,0,0,0.35)]
-          "
+      max-w-[720px]
+      rounded-[20px]
+      bg-[#e7dfcf]
+      px-10
+      py-12
+      text-center
+      shadow-[0_20px_60px_rgba(0,0,0,0.35)]
+    "
         >
           {/* HEADING */}
-          <h2
-            className="
-              heading-font
-              text-[3rem]
-              md:text-[3.8rem]
-              leading-[1]
-              text-[#14190b]
-            "
-          >
-            <span className="font-light">about </span>
-            <span className="italic">Pasta Via</span>
+          <h2 className="leading-[1] text-center">
+            <span
+              className="
+          heading-font
+          text-[42px]
+          md:text-[60px]
+          font-normal
+          text-[#2f3a1f]
+        "
+            >
+              about{" "}
+            </span>
+
+            <span
+              className="
+          brand-font
+          text-[72px]
+          md:text-[120px]
+          font-normal
+          text-black
+          leading-none
+          inline-block
+        "
+            >
+              Pasta Via
+            </span>
           </h2>
 
           {/* TEXT */}
-          <p className="mt-6 text-[1rem] leading-relaxed text-[#2c3420]">
+          <p
+            className="
+        mt-6
+        text-[16px]
+        md:text-[18px]
+        font-normal
+        text-[#2f3a1f]
+        tracking-[0.5px]
+        leading-[1.6]
+      "
+          >
             Pasta Via began as a family tradition — long before it became a
             place. What started around a kitchen table grew into a shared
             belief: pasta should be honest, comforting, and made with intention.
