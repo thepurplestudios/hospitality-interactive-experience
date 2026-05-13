@@ -5,6 +5,7 @@ import Hero from "@/components/sections/Hero";
 import WhySection from "@/components/sections/WhySection";
 import BuildYourOwnPasta from "@/components/sections/BuildYourOwnPasta";
 import AboutSection from "@/components/sections/AboutSection";
+import VisitUsSection from "@/components/sections/VisitUs";
 import PopularCombosSection from "@/components/sections/popular-combos-section";
 import ReservationModal from "@/components/interactive/ReservationModal";
 import PageBlurOverlay from "@/components/motion/PageBlurOverlay";
@@ -27,6 +28,7 @@ function HomeContent() {
         <BuildYourOwnPasta />
         <PopularCombosSection />
         <AboutSection />
+        <VisitUsSection />
       </main>
 
       <PageBlurOverlay isOpen={isReservationOpen} onClose={closeReservation} />

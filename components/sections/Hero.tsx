@@ -16,7 +16,7 @@ export default function Hero() {
           width={1200}
           height={1200}
           priority
-          className="w-155 md:w-245w-[1180px]"
+          className="w-[900px] md:w-[1100px] xl:w-[1300px]"
         />
       </div>
 
