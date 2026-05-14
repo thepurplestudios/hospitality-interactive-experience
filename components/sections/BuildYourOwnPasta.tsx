@@ -35,22 +35,22 @@ export default function BuildYourOwnPasta() {
           {/* LEFT SIDE */}
           <div className="grid gap-16">
             {/* heading block */}
-            <div>
+            <div className="max-w-[720px] mx-auto text-center">
               <motion.h2
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.7 }}
                 className="
-                  heading-font
-                  text-[#14190b]
-                  leading-[0.88]
-                  tracking-[-0.03em]
-                  text-[4rem]
-                  sm:text-[5rem]
-                  md:text-[6rem]
-                  xl:text-[7.2rem]
-                "
+      heading-font
+      text-[#14190b]
+      leading-[0.88]
+      tracking-[-0.03em]
+      text-[4rem]
+      sm:text-[5rem]
+      md:text-[6rem]
+      xl:text-[7.2rem]
+    "
               >
                 Build Your
                 <br />
@@ -66,14 +66,11 @@ export default function BuildYourOwnPasta() {
                   delay: 0.12,
                 }}
                 className="
-  mt-7
-  w-fit
-  mx-auto
-  text-center
-  text-[#2f3a1f]
-  text-[1.35rem]
-  font-semibold
-"
+      mt-6
+      text-[#2f3a1f]
+      text-[1.35rem]
+      font-semibold
+    "
               >
                 Customize It Your Way
               </motion.p>

@@ -2,18 +2,30 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
+import { useState } from "react";
 import Container from "@/components/layout/container";
 
 const features = [
-  "Fresh Pasta\nMade Daily",
-  "50+ Build-\nYour-Own\nCombinations",
-  "Authentic\nItalian Flavors,\nLocal Prices",
+  {
+    title: "Fresh Pasta\nMade Daily",
+    desc: "Made fresh every morning",
+  },
+  {
+    title: "50+ Build-\nYour-Own\nCombinations",
+    desc: "Endless customization options",
+  },
+  {
+    title: "Authentic\nItalian Flavors,\nLocal Prices",
+    desc: "True Italian taste, affordable pricing",
+  },
 ];
 
 export default function WhySection() {
+  const [active, setActive] = useState<number | null>(null);
+
   return (
     <section className="relative overflow-visible pt-18 pb-28 md:pt-24 md:pb-36">
-      {/* left decorative overlap plate */}
+      {/* left decorative plate */}
       <motion.div
         initial={{ opacity: 0, x: -40 }}
         whileInView={{ opacity: 1, x: 0 }}
@@ -36,22 +48,12 @@ export default function WhySection() {
           alt=""
           width={620}
           height={620}
-          className="
-            h-auto
-            w-full
-            select-none
-            opacity-55
-            blur-[2px]
-            saturate-75
-            contrast-85
-          "
+          className="h-auto w-full opacity-55 blur-[2px] saturate-75 contrast-85"
         />
       </motion.div>
 
       <Container className="relative z-20">
-        {/* content block */}
         <div className="mr-0 ml-auto max-w-245">
-          {" "}
           {/* heading */}
           <motion.h2
             initial={{ opacity: 0, y: 28 }}
@@ -59,28 +61,31 @@ export default function WhySection() {
             viewport={{ once: true }}
             transition={{ duration: 0.7 }}
             className="
-  heading-font
-  font-semibold
-  tracking-[-0.02em]
-  text-[#14190b]
-  leading-[0.95]
-  whitespace-nowrap
-  text-[3.3rem]
-  sm:text-[4.6rem]
-  md:text-[5.6rem]
-  xl:text-[6.5rem]
-  text-right
-  pr-10
-  xl:pr-16
-"
+              heading-font
+              font-semibold
+              tracking-[-0.02em]
+              text-[#14190b]
+              leading-[0.95]
+              whitespace-nowrap
+              text-[3.3rem]
+              sm:text-[4.6rem]
+              md:text-[5.6rem]
+              xl:text-[6.5rem]
+              text-right
+              pr-10
+              xl:pr-16
+            "
           >
             Why Pasta Via?
           </motion.h2>
-          {/* red plates */}
+
+          {/* interactive plates */}
           <div className="mt-14 flex flex-col items-center gap-10 md:flex-row md:justify-start md:gap-8 xl:gap-12">
-            {features.map((text, i) => (
+            {features.map((item, i) => (
               <motion.div
-                key={text}
+                key={item.title}
+                onMouseEnter={() => setActive(i)}
+                onMouseLeave={() => setActive(null)}
                 initial={{ opacity: 0, y: 35 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -88,12 +93,13 @@ export default function WhySection() {
                   duration: 0.7,
                   delay: i * 0.12,
                 }}
-                whileHover={{
-                  scale: 1.03,
-                  rotate: i === 1 ? 0 : i % 2 === 0 ? -2 : 2,
+                animate={{
+                  scale: active === i ? 1.1 : 0.9,
+                  opacity: active === i ? 1 : 0.6,
                 }}
-                className="relative shrink-0 w-50 md:w-62.5 xl:w-71.25"
+                className="relative shrink-0 w-50 md:w-62.5 xl:w-71.25 cursor-pointer"
               >
+                {/* plate image */}
                 <Image
                   src="/images/why-section/plate.png"
                   alt=""
@@ -102,23 +108,50 @@ export default function WhySection() {
                   className="h-auto w-full"
                 />
 
-                <div className="absolute inset-0 grid place-items-center text-center">
+                {/* gradient overlay */}
+                <div
+                  className={`
+                    absolute inset-0 rounded-full
+                    transition-all duration-300
+                    ${
+                      active === i
+                        ? "bg-gradient-to-br from-red-600 to-red-800 opacity-70"
+                        : "opacity-0"
+                    }
+                  `}
+                />
+
+                {/* text */}
+                <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-4">
                   <div
                     className="
-                      w-[58%]
-                      font-serif
-                      italic
-                      leading-[1.08]
+                      font-serif italic leading-[1.08]
                       text-white
                       text-[18px]
                       md:text-[22px]
                       xl:text-[26px]
                     "
                   >
-                    {text.split("\n").map((line) => (
+                    {item.title.split("\n").map((line) => (
                       <div key={line}>{line}</div>
                     ))}
                   </div>
+
+                  {/* reveal text */}
+                  {active === i && (
+                    <motion.p
+                      initial={{ opacity: 0, y: 10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      className="
+                        mt-2
+                        text-[12px]
+                        md:text-[14px]
+                        text-white/90
+                      "
+                    >
+                      {item.desc}
+                    </motion.p>
+                  )}
                 </div>
               </motion.div>
             ))}

@@ -2,32 +2,62 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
-
 import Container from "@/components/layout/container";
 
 export default function Hero() {
   return (
-    <section className="relative min-h-screen overflow-hidden">
-      {/* right hero image */}
-      <div className="pointer-events-none absolute right-[-2%] top-0 z-0 md:right-[-1%] md:top-0 xl:right-0 xl:top-0">
+    <Container className="relative z-10 flex min-h-screen items-start justify-start md:items-center md:justify-start">
+      {" "}
+      {/* IMAGE (ABSOLUTE — SAME AS YOUR ORIGINAL) */}
+      <div
+        className="
+          pointer-events-none
+          absolute
+          right-[-5%] sm:right-[-8%] md:right-[-1%] xl:right-0
+          top-[-1%] sm:top-0 md:top-0
+          z-0
+         
+        "
+      >
         <Image
           src="/images/hero/hero-main.png"
           alt="Fresh handmade pasta"
           width={1200}
           height={1200}
           priority
-          className="w-[900px] md:w-[1100px] xl:w-[1300px]"
+          className="
+            w-[850px]
+            sm:w-[1000px]
+            md:w-[1100px]
+            xl:w-[1300px]
+            max-w-none
+          "
         />
       </div>
-
-      {/* content */}
+      {/* CONTENT */}
       <Container className="relative z-10 flex min-h-screen items-center">
-        <div className="max-w-195 pt-28 md:pt-32">
+        <div
+          className="
+    pt-2 sm:pt-6 md:pt-32
+    -mt-20 sm:-mt-12 md:mt-0   /* 🔥 THIS IS THE FIX */
+    pl-4 sm:pl-6 md:pl-10 xl:pl-16
+    max-w-[650px]
+  "
+        >
           <motion.h1
             initial={{ opacity: 0, y: 28 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7 }}
-            className="heading-font text-[3.3rem] leading-[0.9] font-bold text-[#14190b] sm:text-[4.6rem] md:text-[5.8rem] xl:text-[7.5rem]"
+            className="
+              heading-font
+              text-[#14190b]
+              leading-[0.9]
+              font-bold
+              text-[2.6rem]
+              sm:text-[3.8rem]
+              md:text-[5.8rem]
+              xl:text-[7.5rem]
+            "
           >
             Ahmedabad’s
             <br />
@@ -38,7 +68,15 @@ export default function Hero() {
             initial={{ opacity: 0, y: 18 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.15 }}
-            className="mt-5 max-w-180 text-[1rem] leading-[1.45] text-[#2f3a1f] sm:text-[1.1rem] md:mt-6 md:text-[1.2rem]"
+            className="
+              mt-5
+              text-[#2f3a1f]
+              leading-[1.45]
+              text-[0.95rem]
+              sm:text-[1.05rem]
+              md:text-[1.2rem]
+              max-w-[520px]
+            "
           >
             At Pasta Via, we make fresh pasta every morning and let you take the
             lead. Choose your shape, pick your sauce, add your toppings — and
@@ -48,36 +86,26 @@ export default function Hero() {
           <motion.button
             initial={{ opacity: 0, y: 18 }}
             animate={{ opacity: 1, y: 0 }}
-            whileHover={{
-              scale: 1.025,
-              y: -1,
-            }}
-            whileTap={{
-              scale: 0.985,
-            }}
+            whileHover={{ scale: 1.025, y: -1 }}
+            whileTap={{ scale: 0.985 }}
             className="
-    mt-6
-    rounded-[200px]
-    border border-white/30
-    bg-white/12
-    px-7 py-5
-    text-[1.1rem]
-    font-bold
-    text-[#2f3a1f]
-    shadow-[-5px_-5px_10px_2px_rgba(0,0,0,0.2)]
-    backdrop-blur-[10px]
-    transition-all
-    duration-150
-    ease-out
-    md:mt-7
-    md:px-8
-    md:text-[1.35rem]
-  "
+              mt-6
+              rounded-[200px]
+              border border-white/30
+              bg-white/12
+              px-6 py-4
+              text-[1rem]
+              font-bold
+              text-[#2f3a1f]
+              backdrop-blur-[10px]
+              shadow-[-5px_-5px_10px_2px_rgba(0,0,0,0.2)]
+              md:px-8 md:text-[1.35rem]
+            "
           >
             VIEW MENU
           </motion.button>
         </div>
       </Container>
-    </section>
+    </Container>
   );
 }
