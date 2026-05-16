@@ -9,8 +9,22 @@ export default function Hero() {
     <section className="relative min-h-screen overflow-hidden">
       {" "}
       {/* IMAGE (ABSOLUTE — SAME AS YOUR ORIGINAL) */}
-      <div className="pointer-events-none absolute top-0 right-[-120px] z-0 md:right-[-80px] xl:right-0">
-        {" "}
+      {/* IMAGE */}
+      <div
+        className="
+  pointer-events-none 
+  absolute 
+  top-[-10px]
+
+  right-[15px]       /* mobile fix */
+  sm:right-[-80px]
+  md:right-[-1px]   /* tablet */
+  xl:right-0          /* desktop */
+
+  z-0
+  will-change-transform
+"
+      >
         <Image
           src="/images/hero/hero-main.png"
           alt="Fresh handmade pasta"
@@ -18,11 +32,13 @@ export default function Hero() {
           height={1200}
           priority
           className="
-  w-[110vw]
-  md:w-[105vw]
-  xl:w-[1300px]
-  max-w-none
-"
+      w-[140vw]        /* mobile → bring plate INTO frame */
+      sm:w-[125vw]
+      md:w-[115vw]     /* tablet */
+      xl:w-[1300px]    /* desktop unchanged */
+
+      max-w-none
+    "
         />
       </div>
       {/* CONTENT */}
