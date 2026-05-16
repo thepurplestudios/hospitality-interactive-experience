@@ -1,5 +1,9 @@
 "use client";
 
+import { useEffect, useState } from "react";
+import Loader from "@/components/ui/Loader";
+import { AnimatePresence } from "framer-motion";
+
 import Navbar from "@/components/layout/Navbar";
 import Hero from "@/components/sections/Hero";
 import WhySection from "@/components/sections/WhySection";
@@ -16,32 +20,65 @@ import { useUIStore } from "@/store/use-ui-store";
 function HomeContent() {
   const { isReservationOpen, closeReservation } = useUIStore();
 
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setLoading(false);
+    }, 2600); // duration
+
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
     <>
-      <Navbar />
+      <AnimatePresence mode="wait">
+        {loading && <Loader key="loader" />}
+      </AnimatePresence>
 
-      <main
-        className={`min-h-screen transition-all duration-500 ${
-          isReservationOpen ? "scale-[0.985]" : "scale-100"
-        }`}
-      >
-        <Hero />
-        <WhySection />
-        <BuildYourOwnPasta />
-        <PopularCombosSection />
-        <AboutSection />
-        <VisitUsSection />
-        <CTABanner />
-        <Footer />
-      </main>
+      {!loading && (
+        <>
+          <Navbar />
 
-      <PageBlurOverlay isOpen={isReservationOpen} onClose={closeReservation} />
+          <main
+            className={`min-h-screen transition-all duration-500 ${
+              isReservationOpen ? "scale-[0.985]" : "scale-100"
+            }`}
+          >
+            <Hero />
+            <WhySection />
+            <BuildYourOwnPasta />
+            <PopularCombosSection />
+            <AboutSection />
+            <VisitUsSection />
+            <CTABanner />
+            <Footer />
+          </main>
 
-      <ReservationModal />
+          <PageBlurOverlay
+            isOpen={isReservationOpen}
+            onClose={closeReservation}
+          />
+
+          <ReservationModal />
+        </>
+      )}
     </>
   );
 }
 
 export default function Page() {
-  return <HomeContent />;
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => setLoading(false), 2000);
+    return () => clearTimeout(timer);
+  }, []);
+
+  return (
+    <>
+      {loading && <Loader />}
+      {!loading && <HomeContent />}
+    </>
+  );
 }

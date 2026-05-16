@@ -6,19 +6,11 @@ import Container from "@/components/layout/container";
 
 export default function Hero() {
   return (
-    <Container className="relative z-10 flex min-h-screen items-start justify-start md:items-center md:justify-start">
+    <section className="relative min-h-screen overflow-hidden">
       {" "}
       {/* IMAGE (ABSOLUTE — SAME AS YOUR ORIGINAL) */}
-      <div
-        className="
-          pointer-events-none
-          absolute
-          right-[-5%] sm:right-[-8%] md:right-[-1%] xl:right-0
-          top-[-1%] sm:top-0 md:top-0
-          z-0
-         
-        "
-      >
+      <div className="pointer-events-none absolute top-0 right-[-120px] z-0 md:right-[-80px] xl:right-0">
+        {" "}
         <Image
           src="/images/hero/hero-main.png"
           alt="Fresh handmade pasta"
@@ -26,12 +18,11 @@ export default function Hero() {
           height={1200}
           priority
           className="
-            w-[850px]
-            sm:w-[1000px]
-            md:w-[1100px]
-            xl:w-[1300px]
-            max-w-none
-          "
+  w-[110vw]
+  md:w-[105vw]
+  xl:w-[1300px]
+  max-w-none
+"
         />
       </div>
       {/* CONTENT */}
@@ -45,9 +36,9 @@ export default function Hero() {
   "
         >
           <motion.h1
-            initial={{ opacity: 0, y: 28 }}
+            initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7 }}
+            transition={{ duration: 0.7, delay: 2.2 }}
             className="
               heading-font
               text-[#14190b]
@@ -67,7 +58,7 @@ export default function Hero() {
           <motion.p
             initial={{ opacity: 0, y: 18 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.15 }}
+            transition={{ duration: 0.7, delay: 2.3 }}
             className="
               mt-5
               text-[#2f3a1f]
@@ -86,6 +77,7 @@ export default function Hero() {
           <motion.button
             initial={{ opacity: 0, y: 18 }}
             animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 2.4 }}
             whileHover={{ scale: 1.025, y: -1 }}
             whileTap={{ scale: 0.985 }}
             className="
@@ -106,6 +98,6 @@ export default function Hero() {
           </motion.button>
         </div>
       </Container>
-    </Container>
+    </section>
   );
 }

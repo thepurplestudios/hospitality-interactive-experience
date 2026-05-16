@@ -32,6 +32,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
+      suppressHydrationWarning
       className={`${geist.variable} ${italianno.variable} ${italiana.variable}`}
     >
       <body className="bg-background text-foreground font-sans">
