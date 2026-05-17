@@ -9,7 +9,7 @@ export default function Loader() {
       initial={{ opacity: 1 }}
       animate={{ opacity: 0 }}
       transition={{ duration: 0.8, delay: 2.4 }}
-      className="fixed inset-0 z-[999] bg-[#e7dfcf] overflow-hidden"
+      className="fixed inset-0 z-[999] bg-background overflow-hidden"
     >
       {/* 🔥 HERO IMAGE — EXACT SAME AS HERO (DO NOT CHANGE) */}
       {/* HERO IMAGE — PERFECTLY MATCHES HERO */}
@@ -84,7 +84,7 @@ export default function Loader() {
             brand-font
             text-[#14190b]
             leading-[1]
-            text-[3rem]
+            text-[5rem]
             sm:text-[4rem]
             md:text-[5.5rem]
           "
