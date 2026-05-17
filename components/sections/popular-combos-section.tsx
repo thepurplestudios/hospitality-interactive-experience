@@ -39,28 +39,28 @@ const combos = [
 
 export default function PopularCombosSection() {
   return (
-    <section className="relative min-h-[116vh]">
-      {/* BG STAGE (ONLY THIS IS STICKY) */}
+    <section className="relative min-h-[110vh]">
+      {/* ================= BG ================= */}
       <div className="absolute inset-0 -z-10">
         <div
           className="
-            sticky
-            top-0
-            h-screen
-            w-full
+            sticky top-0 h-screen w-full
             bg-cover
             bg-center
-            bg-no-repeat
+            sm:bg-[center_top]
+            md:bg-center
           "
           style={{
             backgroundImage: "url('/images/popular-combos/bg.png')",
           }}
         />
-        <div className="absolute inset-0 bg-black/20" />
+
+        {/* overlay tuning */}
+        <div className="absolute inset-0 bg-black/30 md:bg-black/20" />
       </div>
 
-      {/* CONTENT (NORMAL SCROLL) */}
-      <Container className="relative z-10 py-24">
+      {/* ================= CONTENT ================= */}
+      <Container className="relative z-10 py-20 sm:py-24">
         {/* H1 */}
         <motion.h2
           initial={{ opacity: 0, y: 40 }}
@@ -73,9 +73,9 @@ export default function PopularCombosSection() {
             italic
             text-white
             leading-[0.9]
-            text-[4rem]
-            sm:text-[5rem]
-            md:text-[6rem]
+            text-[2.6rem]
+            sm:text-[3.5rem]
+            md:text-[5rem]
             xl:text-[7rem]
           "
         >
@@ -83,7 +83,20 @@ export default function PopularCombosSection() {
         </motion.h2>
 
         {/* GRID */}
-        <div className="mt-20 grid justify-items-center gap-10 lg:grid-cols-2 xl:grid-cols-3">
+        <div
+          className="
+            mt-14
+            grid
+            justify-items-center
+            gap-6
+
+            sm:gap-8
+            md:gap-10
+
+            lg:grid-cols-2
+            xl:grid-cols-3
+          "
+        >
           {combos.map((combo, i) => (
             <motion.div
               key={combo.name}
@@ -97,31 +110,90 @@ export default function PopularCombosSection() {
               className="
                 flex
                 w-full
-                max-w-[600px]
+
+                /* MOBILE */
+                max-w-[320px]
+
+                /* TABLET */
+                sm:max-w-[360px]
+                md:max-w-[420px]
+
+                /* DESKTOP (UNCHANGED FEEL) */
+                lg:max-w-[520px]
+
                 flex-col
-                rounded-[26px]
-                border border-white/18
+                rounded-[22px]
+                border border-white/15
                 bg-white/10
-                p-[20px]
-                backdrop-blur-[14px]
+
+                p-4 sm:p-5 md:p-6
+
+                backdrop-blur-[12px]
               "
             >
-              <div className="overflow-hidden rounded-[18px]">
+              {/* IMAGE */}
+              <div className="overflow-hidden rounded-[14px]">
                 <Image
                   src={combo.image}
                   alt={combo.name}
                   width={370}
                   height={370}
-                  className="mx-auto w-[370px] h-auto object-contain"
+                  className="
+                    mx-auto
+                    object-contain
+
+                    /* MOBILE */
+                    w-[240px]
+
+                    /* TABLET */
+                    sm:w-[260px]
+                    md:w-[300px]
+
+                    /* DESKTOP */
+                    lg:w-[340px]
+                  "
                 />
               </div>
 
-              <div className="mt-5">
-                <h3 className="text-[28px] font-bold text-white leading-[1]">
+              {/* TEXT */}
+              <div className="mt-4 sm:mt-5">
+                <h3
+                  className="
+                    font-bold
+                    text-white
+                    leading-[1.1]
+
+                    /* MOBILE */
+                    text-[20px]
+
+                    /* TABLET */
+                    sm:text-[22px]
+                    md:text-[24px]
+
+                    /* DESKTOP */
+                    lg:text-[28px]
+                  "
+                >
                   {combo.name}
                 </h3>
 
-                <p className="mt-2 text-[18px] text-[#31421f] leading-[1.2]">
+                <p
+                  className="
+                    mt-1.5
+                    leading-[1.3]
+
+                    /* MOBILE */
+                    text-[14px]
+                    text-[#cdd5c0]
+
+                    /* TABLET */
+                    sm:text-[15px]
+
+                    /* DESKTOP */
+                    lg:text-[17px]
+                    text-[#31421f]
+                  "
+                >
                   {combo.description}
                 </p>
               </div>
