@@ -14,9 +14,14 @@ export default function GlassPill({ onBookClick }: Props) {
       return;
     }
 
-    document.querySelector(href)?.scrollIntoView({
+    const el = document.querySelector(href);
+    if (!el) return;
+
+    const y = el.getBoundingClientRect().top + window.scrollY - 100; // offset for navbar
+
+    window.scrollTo({
+      top: y,
       behavior: "smooth",
-      block: "start",
     });
   };
 
@@ -36,6 +41,8 @@ export default function GlassPill({ onBookClick }: Props) {
       {NAVIGATION_LINKS.map((item, index) => (
         <div key={item.label} className="flex items-center">
           <motion.button
+            onMouseDown={(e) => e.preventDefault()}
+            onClick={() => handleClick(item.type, item.href)}
             whileHover={{
               scale: 1.05,
               y: -1,

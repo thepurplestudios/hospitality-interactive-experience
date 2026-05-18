@@ -30,6 +30,18 @@ function HomeContent() {
     return () => clearTimeout(timer);
   }, []);
 
+  useEffect(() => {
+    if (isReservationOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
+    }
+
+    return () => {
+      document.body.style.overflow = "auto";
+    };
+  }, [isReservationOpen]);
+
   return (
     <>
       <AnimatePresence mode="wait">
@@ -41,7 +53,7 @@ function HomeContent() {
           <Navbar />
 
           <main
-            className={`min-h-screen transition-all duration-500 ${
+            className={`min-h-screen transition-all duration-500 origin-top ${
               isReservationOpen ? "scale-[0.985]" : "scale-100"
             }`}
           >

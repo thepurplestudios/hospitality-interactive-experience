@@ -28,11 +28,20 @@ export default function GlassIconButton({
         stiffness: 320,
         damping: 20,
       }}
+      onMouseDown={(e) => e.preventDefault()}
       onClick={onClick}
       aria-label={label}
-      className="glass flex h-14 w-14 items-center justify-center rounded-full text-black"
+      className="
+  glass
+  flex items-center justify-center
+  rounded-full
+  text-black
+
+  h-12 w-12        /* mobile */
+  md:h-14 md:w-14  /* desktop */
+"
     >
-      <Icon size={24} strokeWidth={1.8} />
+      <Icon className="h-5 w-5 md:h-6 md:w-6" strokeWidth={1.8} />{" "}
     </motion.button>
   );
 }

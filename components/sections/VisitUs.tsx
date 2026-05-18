@@ -6,7 +6,8 @@ import Container from "@/components/layout/container";
 
 export default function VisitUsSection() {
   return (
-    <section className="py-20 md:py-28">
+    <section id="visit-us" className="py-28 scroll-mt-28">
+      {" "}
       <Container
         className="
           flex flex-col items-center
