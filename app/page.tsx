@@ -25,7 +25,7 @@ function HomeContent() {
   useEffect(() => {
     const timer = setTimeout(() => {
       setLoading(false);
-    }, 2600); // duration
+    }, 2600);
 
     return () => clearTimeout(timer);
   }, []);
@@ -44,6 +44,7 @@ function HomeContent() {
 
   return (
     <>
+      {/* SINGLE LOADER */}
       <AnimatePresence mode="wait">
         {loading && <Loader key="loader" />}
       </AnimatePresence>
@@ -54,11 +55,15 @@ function HomeContent() {
 
           <main
             className={`
-    min-h-screen
-    transition-all duration-300
+              min-h-screen
+              transition-all duration-300
 
-    ${isReservationOpen ? "blur-[6px] brightness-75" : "blur-0 brightness-100"}
-  `}
+              ${
+                isReservationOpen
+                  ? "blur-[6px] brightness-75"
+                  : "blur-0 brightness-100"
+              }
+            `}
           >
             <Hero />
             <WhySection />
@@ -82,18 +87,7 @@ function HomeContent() {
   );
 }
 
+/* ✅ CLEAN PAGE (NO SECOND LOADER) */
 export default function Page() {
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    const timer = setTimeout(() => setLoading(false), 2000);
-    return () => clearTimeout(timer);
-  }, []);
-
-  return (
-    <>
-      {loading && <Loader />}
-      {!loading && <HomeContent />}
-    </>
-  );
+  return <HomeContent />;
 }

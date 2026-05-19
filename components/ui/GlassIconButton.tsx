@@ -16,13 +16,8 @@ export default function GlassIconButton({
 }: GlassIconButtonProps) {
   return (
     <motion.button
-      whileHover={{
-        scale: 1.08,
-        y: -2,
-      }}
-      whileTap={{
-        scale: 0.95,
-      }}
+      whileHover={{ scale: 1.08, y: -2 }}
+      whileTap={{ scale: 0.95 }}
       transition={{
         type: "spring",
         stiffness: 320,
@@ -32,16 +27,24 @@ export default function GlassIconButton({
       onClick={onClick}
       aria-label={label}
       className="
-  glass
-  flex items-center justify-center
-  rounded-full
-  text-black
+        glass
+        flex items-center justify-center
+        rounded-full
+        text-black
 
-  h-12 w-12        /* mobile */
-  md:h-14 md:w-14  /* desktop */
-"
+        h-10 w-10          /* mobile */
+        sm:h-11 sm:w-11    /* tablet */
+        md:h-14 md:w-14    /* desktop */
+      "
     >
-      <Icon className="h-5 w-5 md:h-6 md:w-6" strokeWidth={1.8} />{" "}
+      <Icon
+        className="
+          h-4 w-4          /* mobile */
+          sm:h-5 sm:w-5    /* tablet */
+          md:h-6 md:w-6    /* desktop */
+        "
+        strokeWidth={1.8}
+      />
     </motion.button>
   );
 }
