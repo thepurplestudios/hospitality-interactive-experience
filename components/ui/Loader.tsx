@@ -15,18 +15,21 @@ export default function Loader() {
       {/* HERO IMAGE — PERFECTLY MATCHES HERO */}
       <div
         className="
-  pointer-events-none 
-  absolute 
-  top-[-10px]
+    pointer-events-none 
+    absolute 
+    top-[-10px]
 
-  right-[15px]       /* mobile fix */
-  sm:right-[-80px]
-  md:right-[-1px]   /
-  xl:right-0
+    right-[-40px]        /* MOBILE (same as hero) */
+    sm:right-[-80px]
+    md:right-[-1px]
+    xl:right-0
 
-  z-0
-  will-change-transform
-"
+    w-[180vw]            /* 🔥 MOBILE SCALE */
+    sm:w-auto
+    md:w-auto
+
+    z-0
+  "
       >
         <Image
           src="/images/hero/hero-main.png"
@@ -35,11 +38,13 @@ export default function Loader() {
           height={1200}
           priority
           className="
-      w-[140vw]
+      w-[180vw]        /* 🔥 MOBILE */
       sm:w-[125vw]
       md:w-[115vw]
       xl:w-[1300px]
+
       max-w-none
+      block
     "
         />
       </div>

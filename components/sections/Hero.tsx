@@ -18,18 +18,21 @@ export default function Hero() {
       {/* IMAGE */}
       <div
         className="
-          pointer-events-none 
-          absolute 
-          top-[-10px]
+    pointer-events-none 
+    absolute 
+    top-[-10px]
 
-          right-[10px]       /* 🔥 slightly better balance */
-          sm:right-[-80px]
-          md:right-[-1px]
-          xl:right-0
+    right-[-40px]
+    sm:right-[-80px]
+    md:right-[-1px]
+    xl:right-0
 
-          z-0
-          will-change-transform
-        "
+    w-[180vw]       /* 🔥 ADD THIS */
+    sm:w-auto       /* tablet reset */
+    md:w-auto
+
+    z-0
+  "
       >
         <Image
           src="/images/hero/hero-main.png"
@@ -38,13 +41,14 @@ export default function Hero() {
           height={1200}
           priority
           className="
-            w-[140vw]
-            sm:w-[125vw]
-            md:w-[115vw]
-            xl:w-[1300px]
+  w-[180vw]        /* mobile */
+  sm:w-[125vw]
+  md:w-[115vw]
+  xl:w-[1300px]
 
-            max-w-none
-          "
+  max-w-none
+  block            /* 🔥 IMPORTANT */
+"
         />
       </div>
 
@@ -52,11 +56,11 @@ export default function Hero() {
       <Container
         className="
     relative z-10 flex
-    min-h-[55vh] sm:min-h-[72vh] md:min-h-screen
+    min-h-[90vh] sm:min-h-[72vh] md:min-h-screen
 
     items-start md:items-center
 
-    pt-30 sm:pt-22 md:pt-0   /* 🔥 THIS FIX */
+    pt-70 sm:pt-22 md:pt-0   /* 🔥 THIS FIX */
 
     px-5 sm:px-6 md:px-10 xl:px-16
   "
@@ -64,7 +68,6 @@ export default function Hero() {
         <div
           className="
           pt-4 sm:pt-10 md:pt-32
-          pt-6 sm:pt-10 md:pt-32
           max-w-[650px]
           "
         >

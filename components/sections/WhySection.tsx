@@ -28,7 +28,7 @@ export default function WhySection() {
 
           -left-16 md:-left-25
 
-          -top-70 sm:-top-36 md:-top-60 xl:-top-65
+          -top-65 sm:-top-30 md:-top-70 xl:-top-90
           z-0
           -rotate-6
 
