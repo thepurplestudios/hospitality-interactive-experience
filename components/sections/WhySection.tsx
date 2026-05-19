@@ -20,7 +20,7 @@ export default function WhySection() {
       <motion.div
         initial={{ opacity: 0, x: -40 }}
         whileInView={{ opacity: 1, x: 0 }}
-        viewport={{ once: true }}
+        viewport={{ once: true, margin: "-80px" }}
         transition={{ duration: 1 }}
         className="
           pointer-events-none
@@ -50,8 +50,8 @@ export default function WhySection() {
           <motion.h2
             initial={{ opacity: 0, y: 28 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.7 }}
+            viewport={{ once: true, margin: "-80px" }}
+            transition={{ duration: 0.6 }}
             className="
               heading-font
               font-semibold
@@ -88,10 +88,10 @@ export default function WhySection() {
                 onMouseLeave={() => setActive(null)}
                 initial={{ opacity: 0, y: 35 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
+                viewport={{ once: true, margin: "-80px" }}
                 transition={{
                   duration: 0.7,
-                  delay: i * 0.12,
+                  delay: i * 0.1,
                 }}
                 animate={{
                   scale: active === i ? 1.1 : 0.9,

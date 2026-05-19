@@ -53,9 +53,12 @@ function HomeContent() {
           <Navbar />
 
           <main
-            className={`min-h-screen transition-all duration-500 origin-top ${
-              isReservationOpen ? "scale-[0.985]" : "scale-100"
-            }`}
+            className={`
+    min-h-screen
+    transition-all duration-300
+
+    ${isReservationOpen ? "blur-[6px] brightness-75" : "blur-0 brightness-100"}
+  `}
           >
             <Hero />
             <WhySection />

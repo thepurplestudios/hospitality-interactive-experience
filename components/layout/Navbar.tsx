@@ -24,8 +24,8 @@ export default function Navbar() {
   };
 
   return (
-    <header className="fixed inset-x-0 top-0 z-50 pt-6 md:pt-7">
-      <Container className="max-w-[1520px] px-5 md:px-0">
+    <header className="fixed inset-x-0 top-0 z-50">
+      <Container className="max-w-[1520px] px-5 md:px-0 pt-6 md:pt-7">
         {" "}
         <motion.div
           initial={{ opacity: 0, y: -30, filter: "blur(8px)" }}
