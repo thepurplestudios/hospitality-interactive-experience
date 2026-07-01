@@ -61,13 +61,13 @@ export default function Navbar() {
           </div>
 
           {/* MOBILE NAV */}
-          <div className="flex items-center gap-2 md:hidden">
+          <div className="flex items-center gap-2 md:hidden mr-12">
+            {" "}
             <GlassIconButton
               icon={UtensilsCrossed}
               label="Book Table"
               onClick={openReservation}
             />
-
             <GlassIconButton
               icon={MapPin}
               label="Find Us"
