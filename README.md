@@ -290,6 +290,4 @@ Design & Developed by
 
 ---
 
-> Every section in this project follows one rule:
-> **“Make it feel premium, intentional, and portfolio-worthy.”** 
-* or convert this into a **case study format for portfolio**
+
