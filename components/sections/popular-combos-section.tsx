@@ -69,7 +69,7 @@ export default function PopularCombosSection() {
           transition={{ duration: 0.8 }}
           className="
             heading-font
-            text-center
+            !text-center
             italic
             text-white
             leading-[0.9]
@@ -156,7 +156,8 @@ export default function PopularCombosSection() {
               </div>
 
               {/* TEXT */}
-              <div className="mt-4 sm:mt-5">
+              {/* TEXT */}
+              <div className="mt-4 text-center! sm:mt-5">
                 <h3
                   className="
                     font-bold

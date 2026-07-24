@@ -1,6 +1,16 @@
 @import url("https://fonts.googleapis.com/css2?family=Italianno&family=Italiana&display=swap");
 @import "tailwindcss";
 
+/* Hide scrollbar but keep scrolling */
+html {
+  scrollbar-width: none; /* Firefox */
+}
+
+html::-webkit-scrollbar {
+  display: none; /* Chrome, Edge, Safari */
+}
+
+
 :root {
   /* COLORS */
   --background: #f1ebd8;
